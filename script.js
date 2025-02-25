@@ -12,10 +12,12 @@ document.getElementById('count').textContent = visitorCount;
 
 // Popup logic to increment the counter
 window.onload = function () {
-    // Display the popup if the page is being loaded for the first time
+    // Check if the popup has been shown before
     if (!localStorage.getItem('popupShown')) {
+        localStorage.setItem('popupShown', 'true'); // Mark popup as shown
+    } else {
+        // Display the popup
         document.getElementById('popup').style.visibility = 'visible';
-        localStorage.setItem('popupShown', 'true');
     }
 
     // Event listener for 'Yes' button to increment the counter
