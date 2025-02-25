@@ -1,84 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniela Grams - Platform Engineer</title>
-    <link rel="stylesheet" href="style.css">
-
-</head>
 <body>
+    <!-- Sparkles overlay -->
+    <div class="sparkles"></div>
+
+    <!-- Header -->
     <header>
         <h1>Daniela Grams</h1>
         <p>Platform Engineer, Amateur Chef, Professional Cat Herder</p>
-
-        <!-- Visitor Counter (Visible at the top) -->
-        <div class="counter">
-            Visitors: <span id="count">Loading...</span>
-        </div>
     </header>
+
     <!-- Tabs Navigation -->
     <div class="tabs-container">
-        <div class="tab active" data-tab="about">About Me</button>
-        <div class="tab" data-tab="work-experience">Work</button>
-        <div class="tab" data-tab="education">Education</button>
-        <div class="tab" data-tab="certifications">Certifications</button>
-        <div class="tab" data-tab="friends">Friends</button>
-        <div class="tab" data-tab="contact">Contact</button>
+        <div class="tab active" onclick="showTab('about')">About Me</div>
+        <div class="tab" onclick="showTab('work')">Work</div>
+        <div class="tab" onclick="showTab('education')">Education</div>
+        <div class="tab" onclick="showTab('certifications')">Certifications</div>
+        <div class="tab" onclick="showTab('friends')">Friends</div>
+        <div class="tab" onclick="showTab('contact')">Contact</div>
     </div>
 
-        <!-- Sections -->
-        <div class="content">
-            <section id="about" class="tab-content active">
-                <h2>About Me</h2>
-                <p>I’m Daniela Grams, a Platform Engineer based in Amsterdam, Netherlands. I work with technology, but also love to crochet, cook, and read.</p>
-            </section>
-    
-            <section id="work-experience" class="tab-content">
-                <h2>Work Experience</h2>
-                <ul>
-                    <li>Platform Engineer at Royal Schiphol Group</li>
-                    <li>Product Manager at sennder</li>
-                    <li>DevOps Engineer at Natixis in Portugal</li>
-                </ul>
-            </section>
-    
-            <section id="education" class="tab-content">
-                <h2>Education</h2>
-                <p>Bachelor's degree in Informatics Engineering from Instituto Superior de Engenharia do Porto.</p>
-            </section>
-    
-            <section id="certifications" class="tab-content">
-                <h2>Certifications</h2>
-                <ul>
-                    <li>Coming soon...</li>
-                </ul>
-            </section>
+    <!-- Tab Contents -->
+    <div id="about" class="tab-content active">
+        <h2>About Me</h2>
+        <p>I’m Daniela Grams, a Platform Engineer based in Amsterdam, Netherlands. I work with technology, but also love to crochet, cook, and read.</p>
+    </div>
 
-            <!-- Friends Section -->
-            <section id="friends"  class="tab-content">
-                <h2>Friends</h2>
-                <p>Coming soon...</p>
-            </section>
-    
-            <section id="contact" class="tab-content">
-                <h2>Contact Me</h2>
-                <p>Email: <a href="mailto:daniela.grams@proton.me">daniela.grams@proton.me</a></p>
-            </section>
-        </div>
+    <div id="work" class="tab-content">
+        <h2>Work Experience</h2>
+        <ul>
+            <li>Platform Engineer at Royal Schiphol Group</li>
+            <li>Product Manager at sennder</li>
+            <li>DevOps Engineer at Natixis in Portugal</li>
+        </ul>
+    </div>
 
+    <div id="education" class="tab-content">
+        <h2>Education</h2>
+        <p>Bachelor's degree in Informatics Engineering from Instituto Superior de Engenharia do Porto.</p>
+    </div>
+
+    <div id="certifications" class="tab-content">
+        <h2>Certifications</h2>
+        <p>Coming soon...</p>
+    </div>
+
+    <div id="friends" class="tab-content">
+        <h2>Friends</h2>
+        <p>Coming soon...</p>
+    </div>
+
+    <div id="contact" class="tab-content">
+        <h2>Contact Me</h2>
+        <p>Email: daniela.grams@proton.me</p>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Daniela Grams</p>
     </footer>
 
-    <!-- Popup Modal -->
-    <div id="popup" class="popup-overlay">
-        <div class="popup-content">
-            <p>Do you want the visitor counter to go up again?</p>
-            <button id="yes-button">Yes</button>
-            <button id="no-button">No</button>
-        </div>
+    <!-- Popup -->
+    <div id="popup">
+        <p>Do you want the visitor counter to go up again?</p>
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
     </div>
-    <script src="script.js" defer></script>
+
+    <script src="script.js"></script>
 </body>
-</html>
