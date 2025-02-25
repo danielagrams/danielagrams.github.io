@@ -62,3 +62,21 @@ tabButtons.forEach(button => {
 
 // Initialize first tab as active
 document.querySelector('.tab-button').click();
+
+// Generate sparkles in random positions
+function generateSparkles() {
+    const sparkleContainer = document.querySelector('.sparkles');
+    for (let i = 0; i < 50; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle');
+        sparkle.style.top = Math.random() * window.innerHeight + 'px';
+        sparkle.style.left = Math.random() * window.innerWidth + 'px';
+        sparkle.style.animationDuration = Math.random() * 3 + 1 + 's'; // Randomize sparkle speed
+        sparkleContainer.appendChild(sparkle);
+    }
+}
+
+// Call the sparkle function when the page loads
+window.onload = function() {
+    generateSparkles();
+};
