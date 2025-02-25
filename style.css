@@ -1,100 +1,70 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-}
-
+/* Header Styling */
 header {
     background-color: #4c65af;
     color: white;
-    text-align: left;
-    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
 }
 
+/* Main Title */
 header h1 {
     margin: 0;
+    font-size: 24px;
+    font-weight: 600;
 }
 
-header p {
+/* Subheading below main title */
+.subheading {
     margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #e8f1e8;
 }
 
+/* Navigation */
 nav ul {
     list-style-type: none;
     display: flex;
     padding: 0;
+    margin: 0;
 }
 
 nav li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
+/* Visitor Counter Styling */
 .counter {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
-    margin-left: 20px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
-/* Section styles */
-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
-}
-
-section:target {
-    display: block;
-}
-
+/* Footer */
 footer {
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     background-color: #333;
     color: white;
     position: fixed;
     width: 100%;
     bottom: 0;
-}
-
-h2 {
-    color: #4c65af;
-}
-
-#visitor-counter p {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Work experience list styling */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 15px;
-}
-
-strong {
-    color: #333;
 }
