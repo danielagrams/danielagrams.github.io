@@ -9,14 +9,24 @@ body {
 header {
     background-color: #4c65af;
     color: white;
-    text-align: center;
+    text-align: left;
     padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 0;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: center;
     padding: 0;
 }
 
@@ -33,6 +43,13 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
+}
+
+.counter {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
 }
 
 /* Section styles */
@@ -52,7 +69,7 @@ section:target {
 footer {
     text-align: center;
     padding: 5px;
-    background-color: #4c65af;
+    background-color: #333;
     color: white;
     position: fixed;
     width: 100%;
