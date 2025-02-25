@@ -6,14 +6,11 @@
     <title>Daniela Grams - Platform Engineer</title>
     <link rel="stylesheet" href="style.css">
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
 </head>
 <body>
     <header>
         <h1>Daniela Grams</h1>
-        <p>Platform Engineer, Cat Enthusiast, Crocheter, Baker, and More!</p>
+        <p>Platform Engineer, Amateur Chef, Professional Cat Herder</p>
 
         <!-- Visitor Counter (Visible at the top) -->
         <div class="counter">
@@ -105,6 +102,13 @@
         <p>&copy; 2025 Daniela Grams</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+            <p>Do you want the visitor counter to go up again?</p>
+            <button id="yes-button">Yes</button>
+            <button id="no-button">No</button>
+        </div>
+    </div>
 </body>
 </html>

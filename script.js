@@ -1,26 +1,33 @@
-// Initialize Firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyCY8pR1cqlCOt9kE-5ZBWU1XwGrgbwnDWI",
-    authDomain: "my-website-2469a.firebaseapp.com",
-    databaseURL: "https://my-website-2469a-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "my-website-2469a",
-    storageBucket: "my-website-2469a.firebasestorage.app",
-    messagingSenderId: "774089208016",
-    appId: "1:774089208016:web:23522f24af5baa5fe96ed5"
+// Check if there is already a counter in local storage, if not generate a random one
+let visitorCount = localStorage.getItem('visitorCount');
+
+if (!visitorCount) {
+    // Generate a random number between 1000 and 10000 if no count exists
+    visitorCount = Math.floor(Math.random() * (1000 - 1 + 1)) + 1000;
+    localStorage.setItem('visitorCount', visitorCount);
+}
+
+// Display the visitor count
+document.getElementById('count').textContent = visitorCount;
+
+// Popup logic to increment the counter
+window.onload = function () {
+    // Display the popup if the page is being loaded for the first time
+    if (!localStorage.getItem('popupShown')) {
+        document.getElementById('popup').style.visibility = 'visible';
+        localStorage.setItem('popupShown', 'true');
+    }
+
+    // Event listener for 'Yes' button to increment the counter
+    document.getElementById('yes-button').addEventListener('click', function () {
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('count').textContent = visitorCount;
+        document.getElementById('popup').style.visibility = 'hidden';
+    });
+
+    // Event listener for 'No' button to close the popup without changing the counter
+    document.getElementById('no-button').addEventListener('click', function () {
+        document.getElementById('popup').style.visibility = 'hidden';
+    });
 };
-
-// Initialize Firebase App
-const app = firebase.initializeApp(firebaseConfig);
-
-// Reference to Firebase Realtime Database
-const db = firebase.database();
-const counterRef = db.ref('visitorCount');
-
-// Fetch the current counter value
-counterRef.once('value', snapshot => {
-    const visitorCount = snapshot.val() || 0;
-    document.getElementById('count').textContent = visitorCount;
-    
-    // Increment counter on each page load
-    counterRef.set(visitorCount + 1);
-});

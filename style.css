@@ -1,3 +1,11 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
 /* Header Styling */
 header {
     background-color: #4c65af;
@@ -6,22 +14,16 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    position: relative;
-    z-index: 1;
 }
 
-/* Main Title */
 header h1 {
     margin: 0;
     font-size: 24px;
-    font-weight: 600;
 }
 
-/* Subheading below main title */
 .subheading {
     margin: 0;
     font-size: 16px;
-    font-weight: 400;
     color: #e8f1e8;
 }
 
@@ -41,7 +43,6 @@ nav a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    font-weight: 500;
 }
 
 nav a:hover {
@@ -53,12 +54,44 @@ nav a:hover {
     font-size: 16px;
     font-weight: bold;
     color: white;
-    position: absolute;
-    top: 10px;
-    right: 20px;
 }
 
-/* Footer */
+/* Popup Modal Styling */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; /* Hidden by default */
+    z-index: 2;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #4c65af;
+    color: white;
+}
+
+/* Footer Styling */
 footer {
     text-align: center;
     padding: 10px;
