@@ -6,12 +6,13 @@ body {
     background-color: #000;
     color: #fff;
     text-align: center;
-    background: url('space.jpg') no-repeat center center fixed; /* Galaxy background */
+    background: linear-gradient(to bottom right, #000000, #8a2be2); /* Black to Neon Purple Gradient */
+    /*background: url('space.jpg') no-repeat center center fixed; *//* Galaxy background */
     background-size: cover;
     animation: moveBackground 30s linear infinite; /* Smooth animation */
 }
 
-/* Galaxy background movement */
+/* background movement */
 @keyframes moveBackground {
     0% { background-position: 0 0; }
     100% { background-position: 100% 100%; }
@@ -41,34 +42,35 @@ body {
     height: 3px;
     background-color: #fff;
     border-radius: 50%;
-    animation: sparkle 1s infinite;
+    animation: sparkle 1.5s infinite;
 }
 
 .sparkle:nth-child(odd) {
     animation-duration: 1.5s;
+    background-color: #ff00ff; /* Neon Purple */
 }
 
 .sparkle:nth-child(even) {
     animation-duration: 2s;
+    background-color: #ffcc00; /* Neon Yellow */
 }
 
 /* Header Section */
 header {
-    padding: 20px;
+    padding: 10px;
     background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 10;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 header h1 {
     font-size: 2rem;
     margin: 0;
     color: #fff;
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
 }
 
 header p {
@@ -83,7 +85,6 @@ header p {
     justify-content: center;
     background-color: #111;
     border-radius: 10px 10px 0 0;
-    margin-top: 80px; /* Adjusted to not overlap with header */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -97,6 +98,7 @@ header p {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     color: #fff;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
 }
 
 /* Hover and active state styles */
