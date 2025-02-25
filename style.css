@@ -66,6 +66,8 @@ header h1 {
     background-color: #1e1e1e;
     border-radius: 8px;
     margin-top: 20px;
+    max-height: 80vh; /* Ensures content fits and scrolls when needed */
+    overflow-y: auto; /* Allow scrolling within content */
 }
 
 .tab-content {

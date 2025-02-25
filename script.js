@@ -1,38 +1,46 @@
-// Check if there is already a counter in local storage, if not generate a random one
-let visitorCount = localStorage.getItem('visitorCount');
+// Check for page reload using performance API
+function isPageReloaded() {
+    return performance.navigation.type === performance.navigation.TYPE_RELOAD;
+}
 
-if (!visitorCount) {
-    // Generate a random number between 1000 and 10000 if no count exists
-    visitorCount = Math.floor(Math.random() * (1000 - 1 + 1)) + 1000;
+// Set visitor count if not already set
+if (!localStorage.getItem('visitorCount')) {
+    const visitorCount = Math.floor(Math.random() * 1000) + 1; // Random count between 1 and 1000
     localStorage.setItem('visitorCount', visitorCount);
 }
 
-// Display the visitor count
-document.getElementById('count').textContent = visitorCount;
+document.getElementById('count').textContent = localStorage.getItem('visitorCount');
 
-// Popup logic to increment the counter
-window.onload = function () {
-    // Check if the popup has been shown before
-    if (!localStorage.getItem('popupShown')) {
-        localStorage.setItem('popupShown', 'true'); // Mark popup as shown
-    } else {
-        // Display the popup
-        document.getElementById('popup').style.visibility = 'visible';
-    }
+// Handling the popup logic
+if (isPageReloaded() && !localStorage.getItem('popupShown')) {
+    // Show popup on refresh
+    document.getElementById('popup').style.visibility = 'visible';
 
-    // Event listener for 'Yes' button to increment the counter
-    document.getElementById('yes-button').addEventListener('click', function () {
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('count').textContent = visitorCount;
-        document.getElementById('popup').style.visibility = 'hidden';
-    });
+    // Mark that the popup has been shown
+    localStorage.setItem('popupShown', 'true');
+}
 
-    // Event listener for 'No' button to close the popup without changing the counter
-    document.getElementById('no-button').addEventListener('click', function () {
-        document.getElementById('popup').style.visibility = 'hidden';
-    });
-};
+// Handle "Yes" and "No" for the popup
+document.getElementById('yes-button').addEventListener('click', () => {
+    // Increase the visitor count when the user clicks "Yes"
+    let count = parseInt(localStorage.getItem('visitorCount')) + 1;
+    localStorage.setItem('visitorCount', count);
+    document.getElementById('count').textContent = count;
+
+    // Hide the popup
+    document.getElementById('popup').style.visibility = 'hidden';
+});
+
+document.getElementById('no-button').addEventListener('click', () => {
+    // Just hide the popup if the user clicks "No"
+    document.getElementById('popup').style.visibility = 'hidden';
+});
+
+// Reset popupShown flag if localStorage was cleared or after a period
+setInterval(() => {
+    localStorage.removeItem('popupShown');
+}, 10000);  // Example: reset flag every 10 seconds (optional)
+
 
 
 // Tab Switching Logic
